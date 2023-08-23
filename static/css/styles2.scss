@@ -1,0 +1,201 @@
+$dark-theme-background: #242428;
+$dark-theme-font-color: white;
+$dark-theme-link-default: #e67faa;
+$dark-theme-link-hover: #de639a;
+$dark-theme-section-border: #777;
+$light-theme-background: #e6e6e6;
+$light-theme-font-color: black;
+$light-theme-link-default: #2b97c1;
+$light-theme-link-hover: #819aff;
+$light-theme-section-border: #444;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@mixin theme($backbround, $font, $link-default, $link-hover, $section-border) {
+  background-color: $backbround;
+  color: $font;
+
+  a {
+    color: $link-default;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  .section {
+    padding-left: 20px;
+    border-left: 2px solid $section-border;
+  }
+}
+
+.mode-container {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.lang-container {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+select {
+  appearance: none;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  background-color: $dark-theme-background;
+  color: $dark-theme-font-color;
+  padding: 5px 10px;
+  border: 1px solid #555;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+label {
+  color: $dark-theme-font-color;
+  font-weight: 500;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include theme($dark-theme-background, $dark-theme-font-color, $dark-theme-link-default, $dark-theme-link-hover, $dark-theme-section-border);
+  }
+}
+
+.dark-theme {
+  @include theme($dark-theme-background, $dark-theme-font-color, $dark-theme-link-default, $dark-theme-link-hover, $dark-theme-section-border);
+}
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  body {
+    @include theme($light-theme-background, $light-theme-font-color, $light-theme-link-default, $light-theme-link-hover, $light-theme-section-border);
+  }
+}
+
+.light-theme {
+  @include theme($light-theme-background, $light-theme-font-color, $light-theme-link-default, $light-theme-link-hover, $light-theme-section-border);
+}
+
+// Profile header
+header {
+  color: $light-theme-background;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: fit-content;
+  background-image: url(/static/images/background.jpg);
+  background-size: cover;
+  background-color: rgba(63, 8, 43, 0.5);
+  background-blend-mode: multiply;
+}
+
+.profile-photo {
+  margin: auto;
+  border: 3px solid white;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid rgba(255, 255, 255);
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
+.profile-svg {
+  width: 50px;
+  height: 50px;
+}
+
+.links-container {
+  margin-top: 20px;
+  gap: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+// Profile header
+
+// Body
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: 7px 0px;
+}
+
+.englishful-link {
+  background-image: radial-gradient(circle at 100% 60%, #ff75aa, #8769ff 40%, #4aa2ff 88%, #ecedef 165%, #f0eff0 165%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-decoration-break: clone;
+
+  &:hover {
+    background-image: radial-gradient(circle at 100% 60%, #fc5e9b, #735adb 73%, #3f90e5 88%, #ecedef 165%, #f0eff0 165%);
+    border-bottom: 1px solid #444;
+  }
+}
+
+#lang-switch {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px 0px;
+}
+
+.main-container {
+  position: relative;
+  padding: 0px 15px;
+  padding-top: 50px;
+  max-width: 80ch;
+  margin: auto;
+}
+
+@media all and (max-width: 480px) {
+  .profile-photo {
+    height: 150px;
+    width: 150px;
+  }
+
+  .profile-svg {
+    width: 40px;
+    height: 40px;
+  }
+}
