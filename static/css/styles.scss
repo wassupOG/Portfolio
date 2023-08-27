@@ -75,46 +75,22 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    @include theme(
-      $dark-theme-background,
-      $dark-theme-font-color,
-      $dark-theme-link-default,
-      $dark-theme-link-hover,
-      $dark-theme-section-border
-    );
+    @include theme($dark-theme-background, $dark-theme-font-color, $dark-theme-link-default, $dark-theme-link-hover, $dark-theme-section-border);
   }
 }
 
 .dark-theme {
-  @include theme(
-    $dark-theme-background,
-    $dark-theme-font-color,
-    $dark-theme-link-default,
-    $dark-theme-link-hover,
-    $dark-theme-section-border
-  );
+  @include theme($dark-theme-background, $dark-theme-font-color, $dark-theme-link-default, $dark-theme-link-hover, $dark-theme-section-border);
 }
 
 @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
   body {
-    @include theme(
-      $light-theme-background,
-      $light-theme-font-color,
-      $light-theme-link-default,
-      $light-theme-link-hover,
-      $light-theme-section-border
-    );
+    @include theme($light-theme-background, $light-theme-font-color, $light-theme-link-default, $light-theme-link-hover, $light-theme-section-border);
   }
 }
 
 .light-theme {
-  @include theme(
-    $light-theme-background,
-    $light-theme-font-color,
-    $light-theme-link-default,
-    $light-theme-link-hover,
-    $light-theme-section-border
-  );
+  @include theme($light-theme-background, $light-theme-font-color, $light-theme-link-default, $light-theme-link-hover, $light-theme-section-border);
 }
 
 // Profile header
@@ -149,7 +125,6 @@ header {
   border-bottom: 1px solid transparent;
 
   &:hover {
-    border-bottom: 1px solid rgba(255, 255, 255);
     color: rgba(255, 255, 255, 0.9) !important;
   }
 }
@@ -157,6 +132,19 @@ header {
 .profile-svg {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+}
+
+.telegram-svg {
+  &:hover {
+    filter: drop-shadow(0px 0px 10px #229ed9);
+  }
+}
+
+.gitbub-svg {
+  &:hover {
+    filter: drop-shadow(0px 0px 10px #fdfefe);
+  }
 }
 
 .links-container {
@@ -183,14 +171,7 @@ header {
   box-decoration-break: clone;
 
   &:hover {
-    background-image: radial-gradient(
-      circle at 100% 60%,
-      #fc5e9b,
-      #735adb 73%,
-      #3f90e5 88%,
-      #ecedef 165%,
-      #f0eff0 165%
-    );
+    background-image: radial-gradient(circle at 100% 60%, #fc5e9b, #735adb 73%, #3f90e5 88%, #ecedef 165%, #f0eff0 165%);
     border-bottom: 1px solid #444;
   }
 }
