@@ -1,5 +1,5 @@
 
-# 🌟 Developer Portfolio Template 🌟
+# 🌟 Developer Portfolio Template built with vanilla JS & HTML 🌟
 
 👋 Welcome to the Developer Portfolio Template repository! This template provides a basic structure for creating your own portfolio website using HTML, JavaScript, and SCSS. Feel free to download and use it for your needs!
 
